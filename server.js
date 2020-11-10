@@ -5,6 +5,7 @@ const cors = require('cors')
 const bcrypt = require('bcryptjs')
 
 const UsersRouter = require('./users/users-router.js')
+const AuthRouter = require('./auth/auth-router.js')
 
 const server = express()
 
@@ -13,6 +14,7 @@ server.use(helmet())
 server.use(morgan('dev'))
 server.use(cors())
 server.use('/api/users', UsersRouter)
+server.use('/api/auth', AuthRouter)
 
 // server.get('/', (req, res)=> {
 //     res.send('endpoint is working!')
